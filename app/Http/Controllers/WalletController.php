@@ -30,6 +30,6 @@ class WalletController extends Controller
             'balance' => $ethService->getBalance($request->post('address'))
         ]);
 
-        return redirect()->back()->with('success', self::SUCCESS_WALLET_SAVE_MESSAGE);
+        return redirect(route('wallet.index'))->with('success', self::SUCCESS_WALLET_SAVE_MESSAGE);
     }
 }
