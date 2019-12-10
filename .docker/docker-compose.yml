@@ -1,0 +1,43 @@
+version: "3.1"
+services:
+
+    crypto-redis:
+      image: redis:alpine
+      container_name: crypto-redis
+      ports:
+        - "16378:6379"
+
+    crypto-mariadb:
+      image: mariadb:10.4
+      container_name: crypto-mariadb
+      working_dir: /application
+      volumes:
+        - ../:/application
+      environment:
+        - MYSQL_ROOT_PASSWORD=adminPass
+        - MYSQL_DATABASE=crypto
+        - MYSQL_USER=crypto
+        - MYSQL_PASSWORD=cryptoPass
+      ports:
+        - "3390:3306"
+
+    crypto-webserver:
+      image: nginx:alpine
+      container_name: crypto-webserver
+      working_dir: /application
+      volumes:
+          - ../:/application
+          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "8080:80"
+
+    crypto-php-fpm:
+      build: phpdocker/php-fpm
+      container_name: crypto-php-fpm
+      working_dir: /application
+      volumes:
+        - ../:/application
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
+      ports:
+        - "9010:9000"
+
