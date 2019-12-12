@@ -41,6 +41,6 @@
 
 @push('scripts')
     <script>
-        let ws = new WebSocket('ws://localhost:7070');
+        let ws = new WebSocket('{{config('app.socket_url')}}');
     </script>
 @endpush

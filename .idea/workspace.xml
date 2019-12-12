@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6462fc3f-7bb5-4716-8737-532bc3fe42d3" name="Default Changelist" comment="update">
+    <list default="true" id="6462fc3f-7bb5-4716-8737-532bc3fe42d3" name="Default Changelist" comment="update composer json">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/wallet/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallet/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +20,7 @@
     </execution>
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="47241" />
+    <option name="totalTimeSeconds" value="47538" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -241,7 +243,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575925064504</updated>
-      <workItem from="1575925065964" duration="51824000" />
+      <workItem from="1575925065964" duration="52202000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1575937579982</created>
@@ -271,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576118601898</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update composer json">
+      <created>1576121149310</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576121149312</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +302,7 @@
     <MESSAGE value="Fix redirect after adding the wallet" />
     <MESSAGE value="Fix .env, edit readme" />
     <MESSAGE value="Add a lot of stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a lot of stuff" />
+    <MESSAGE value="update composer json" />
+    <option name="LAST_COMMIT_MESSAGE" value="update composer json" />
   </component>
 </project>
