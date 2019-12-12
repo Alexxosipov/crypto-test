@@ -4,16 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Trainsaciton extends Model
+class Transaction extends Model
 {
     const OPERATION_TYPE_IN = 'in';
     const OPERATION_TYPE_OUT = 'out';
 
-    protected $fillable = [
-        'from',
-        'amount',
-        'operation_type'
-    ];
+    protected $fillable = ["wallet_id", "value", "operation_type", "to"];
 
     public function wallet()
     {

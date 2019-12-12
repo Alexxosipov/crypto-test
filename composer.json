@@ -11,13 +11,21 @@
         "php": "^7.1.3",
         "ext-bcmath": "*",
         "ext-json": "*",
+        "cboden/ratchet": "^0.4.1",
+        "digitaldonkey/ethereum-php": "dev-master",
         "fideloper/proxy": "^4.0",
         "graze/guzzle-jsonrpc": "^3.2",
         "guzzlehttp/guzzle": "^6.5",
-        "krowinski/bcmath-extended": "^5.1",
+        "kesar/ethereum-php": "dev-master",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "mbezhanov/ethereum-converter": "^1.0"
+        "mbezhanov/ethereum-converter": "^1.0",
+        "predis/predis": "^1.1",
+        "ratchet/pawl": "^0.3.4",
+        "react/zmq": "^0.4.0",
+        "recoil/recoil": "^1.0",
+        "spatie/async": "^1.1",
+        "ext-zmq": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

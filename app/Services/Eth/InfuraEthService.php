@@ -1,11 +1,14 @@
 <?php
 
-
 namespace App\Services\Eth;
 
+use App\Helpers\EthHelper;
 use BCMathExtended\BC;
 use Bezhanov\Ethereum\Converter;
+use EthereumPHP\Types\Wei;
 use Graze\GuzzleHttp\JsonRpc\Client;
+use http\Exception\InvalidArgumentException;
+use Illuminate\Support\Facades\Log;
 
 class InfuraEthService implements EthService
 {
@@ -20,11 +23,18 @@ class InfuraEthService implements EthService
         $this->converter = new Converter();
     }
 
-    public function getBalance(string $address): ?float
+    public function getBalance(string $address): ?string
     {
         $response = $this->rpcClient->send($this->rpcClient->request(1, 'eth_getBalance', [$address, 'latest']));
-        $hexInt = BC::hexdec($response->getRpcResult());
-        return $this->converter->fromWei($hexInt);
+        return EthHelper::getWeiFromHexDec($response->getRpcResult());
+    }
+
+    public function getTransaction(string $transactionHash)
+    {
+        $request = $this->rpcClient->send(
+            $this->rpcClient->request(2, 'eth_getTransactionByHash', [$transactionHash])
+        );
+        return $request->getRpcResult();
     }
 
     public function getHistory(string $address): array

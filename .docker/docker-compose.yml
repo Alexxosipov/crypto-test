@@ -30,6 +30,8 @@ services:
           - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       ports:
        - "8080:80"
+       - "7070:7070"
+       - "5555:5555"
 
     crypto-php-fpm:
       build: phpdocker/php-fpm

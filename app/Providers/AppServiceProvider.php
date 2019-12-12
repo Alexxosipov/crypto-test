@@ -2,8 +2,12 @@
 
 namespace App\Providers;
 
+use App\Observers\TransactionObserver;
+use App\Observers\WalletObserver;
 use App\Services\Eth\EthService;
 use App\Services\Eth\InfuraEthService;
+use App\Transaction;
+use App\Wallet;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Wallet::observe(WalletObserver::class);
+        Transaction::observe(TransactionObserver::class);
     }
 }

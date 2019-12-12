@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6462fc3f-7bb5-4716-8737-532bc3fe42d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+    <list default="true" id="6462fc3f-7bb5-4716-8737-532bc3fe42d3" name="Default Changelist" comment="Fix .env, edit readme">
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/ListenWebsocketCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/WebSocketServer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Tasks/ProcessTransactionTask.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/EthHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Helpers/Transaction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Observers/TransactionObserver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Observers/WalletObserver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Transaction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Websocket/WebsocketHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Websocket/WebsocketPusher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_11_045804_create_transactions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/phpdocker/php-fpm/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/phpdocker/php-fpm/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f96e826-70a3-48a7-a612-a73cd35504be.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f96e826-70a3-48a7-a612-a73cd35504be.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/testcrypto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/testcrypto.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WalletController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WalletController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Eth/EthService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Eth/EthService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Eth/InfuraEthService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Eth/InfuraEthService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Trainsaciton.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Wallet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Wallet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/infura.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/infura.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_09_210858_create_wallets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_09_210858_create_wallets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_09_224812_create_trainsacitons_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/wallet/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallet/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +49,7 @@
     </execution>
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="9547" />
+    <option name="totalTimeSeconds" value="45710" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -145,6 +176,33 @@
       <path value="$PROJECT_DIR$/vendor/graze/guzzle-jsonrpc" />
       <path value="$PROJECT_DIR$/vendor/mbezhanov/ethereum-converter" />
       <path value="$PROJECT_DIR$/vendor/krowinski/bcmath-extended" />
+      <path value="$PROJECT_DIR$/vendor/ratchet/rfc6455" />
+      <path value="$PROJECT_DIR$/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/vendor/react/promise-timer" />
+      <path value="$PROJECT_DIR$/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/vendor/ratchet/pawl" />
+      <path value="$PROJECT_DIR$/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/vendor/digitaldonkey/ecverify" />
+      <path value="$PROJECT_DIR$/vendor/digitaldonkey/ethereum-php" />
+      <path value="$PROJECT_DIR$/vendor/simplito/bn-php" />
+      <path value="$PROJECT_DIR$/vendor/simplito/bigint-wrapper-php" />
+      <path value="$PROJECT_DIR$/vendor/simplito/elliptic-php" />
+      <path value="$PROJECT_DIR$/vendor/kornrunner/keccak" />
+      <path value="$PROJECT_DIR$/vendor/pear/math_biginteger" />
+      <path value="$PROJECT_DIR$/vendor/kesar/ethereum-php" />
+      <path value="$PROJECT_DIR$/vendor/phlib/base_convert" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/vendor/recoil/kernel" />
+      <path value="$PROJECT_DIR$/vendor/recoil/api" />
+      <path value="$PROJECT_DIR$/vendor/recoil/recoil" />
+      <path value="$PROJECT_DIR$/vendor/icecave/repr" />
+      <path value="$PROJECT_DIR$/vendor/spatie/async" />
+      <path value="$PROJECT_DIR$/vendor/cboden/ratchet" />
+      <path value="$PROJECT_DIR$/vendor/react/zmq" />
     </include_path>
   </component>
   <component name="ProjectId" id="1UlJ5TPP1dNPytiabJzjzKFPezE" />
@@ -188,6 +246,16 @@
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3f845314" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3f845314" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@562cc1ee" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3f845314" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5b6f5e05" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
           </expand>
           <select />
         </treeState>
@@ -204,7 +272,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575925064504</updated>
-      <workItem from="1575925065964" duration="10308000" />
+      <workItem from="1575925065964" duration="49996000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1575937579982</created>
@@ -220,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575937733960</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix .env, edit readme">
+      <created>1575939113049</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575939113049</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +315,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit" />
     <MESSAGE value="Fix redirect after adding the wallet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix redirect after adding the wallet" />
+    <MESSAGE value="Fix .env, edit readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix .env, edit readme" />
   </component>
 </project>

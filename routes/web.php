@@ -14,4 +14,9 @@ Route::group(['prefix' => 'wallets'], function(){
     Route::get('/', 'WalletController@index')->name('wallet.index');
     Route::get('/create', 'WalletController@create')->name('wallet.create');
     Route::post('/create', 'WalletController@store');
+    Route::get('/getBalance', 'WalletController@getBalance');
+});
+
+Route::group(['prefix' => 'transactions'], function(){
+    Route::get('/get', 'TransactionController@findTransaction');
 });

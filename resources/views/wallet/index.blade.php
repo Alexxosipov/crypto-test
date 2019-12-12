@@ -38,3 +38,9 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        let ws = new WebSocket('ws://localhost:7070');
+    </script>
+@endpush
