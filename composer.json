@@ -17,6 +17,7 @@
         "graze/guzzle-jsonrpc": "^3.2",
         "guzzlehttp/guzzle": "^6.5",
         "kesar/ethereum-php": "dev-master",
+        "krowinski/bcmath-extended": "^5.1",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "mbezhanov/ethereum-converter": "^1.0",
