@@ -2,14 +2,13 @@
 
 namespace App\Console\Commands;
 
-use App\Console\Tasks\ProcessTransactionTask;
 use App\Services\Eth\EthService;
+use App\Websocket\AsyncTasks\ProcessNewHeadEthereumTask;
 use Illuminate\Console\Command;
 use Spatie\Async\Pool;
 
 class ListenWebsocketCommand extends Command
 {
-    private $count = 0;
      /**
      * The name and signature of the console command.
      *
@@ -42,23 +41,23 @@ class ListenWebsocketCommand extends Command
     public function handle()
     {
         $projectId = config('infura.id');
-        \Ratchet\Client\connect("wss://mainnet.infura.io/ws/v3/{$projectId}")
+        $network = config('infura.network');
+        \Ratchet\Client\connect("wss://{$network}.infura.io/ws/v3/{$projectId}")
             ->then(function($conn) {
                 $req = json_encode([
                     'jsonrpc' => "2.0",
                     "id" => 1,
                     "method" => "eth_subscribe",
-                    "params" => ["newPendingTransactions"]
+                    "params" => ["newHeads"]
                 ]);
                 $conn->send($req);
-                $this->info('connected');
+                $this->info('Connected to INFURA');
 
                 $conn->on('message', function($msg) use ($conn) {
-                    $this->info(rand(1,5));
                     $transaction = json_decode($msg, true);
                     if (isset($transaction['params'])) {
-                        $transactionHash = $transaction['params']['result'];
-                        $this->pool->add(new ProcessTransactionTask($transactionHash, $this->ethService));
+                        $blockHash = $transaction['params']['result']['hash'];
+                        $this->pool->add(new ProcessNewHeadEthereumTask($blockHash, $this->ethService));
                     }
                 });
 

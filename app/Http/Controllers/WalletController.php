@@ -14,10 +14,16 @@ class WalletController extends Controller
     // it should be refactored with translation dictionaries
     const SUCCESS_WALLET_SAVE_MESSAGE = 'Wallet successfully saved.';
 
-    public function index(Request $request, EthService $ethService)
+    public function index(Request $request)
     {
         $wallets = Wallet::all();
         return view('wallet.index', compact('wallets'));
+    }
+
+    public function apiIndex()
+    {
+        $wallets = Wallet::all();
+        return response()->json($wallets);
     }
 
     public function create()
@@ -36,16 +42,14 @@ class WalletController extends Controller
         return redirect(route('wallet.index'))->with('success', self::SUCCESS_WALLET_SAVE_MESSAGE);
     }
 
-    public function getBalance(Request $request, EthService $ethService)
+    public function get(Wallet $wallet)
     {
-        $wallets = Wallet::all();
-        $res = [];
-        foreach ($wallets as $wallet) {
-            //Redis::set(WalletObserver::getWalletKey($wallet->address), 1);
-            $res[$wallet->address] = Redis::get(WalletObserver::getWalletKey($wallet->address));
-        }
-        dd($res);
+        $wallet->load('transactions');
+        return view('wallet.wallet', compact('wallet'));
+    }
 
-//        dd($ethService->getBalance($request->get('address')));
+    public function transactions(Wallet $wallet)
+    {
+        return response()->json(['transactions' => $wallet->transactions, 'balance' => $wallet->balance]);
     }
 }

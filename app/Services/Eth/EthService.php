@@ -11,4 +11,6 @@ interface EthService
     public function getHistory(string $address) :array;
 
     public function getTransaction(string $transactionHash);
+
+    public function getBlock(string $blockHash);
 }

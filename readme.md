@@ -9,9 +9,10 @@ docker-compose up -d
 docker exec -it crypto-php-fpm bash
 php artisan key:generate
 php artisan migrate
+php artisan infura:listen
 ```
 
-Then you have an access to the application on http://localhost:8080/
+Then you will have an access to the application on http://localhost:8080/
 
 ### Endpoints
 

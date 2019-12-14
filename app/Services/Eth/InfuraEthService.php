@@ -42,4 +42,13 @@ class InfuraEthService implements EthService
         // TODO: Implement getHistory() method.
         return [];
     }
+
+    public function getBlock(string $blockHash) :?array
+    {
+        $req = $this->rpcClient->send(
+            $this->rpcClient->request(3, 'eth_getBlockByHash', [$blockHash, true])
+        );
+
+        return $req->getRpcResult();
+    }
 }

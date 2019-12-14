@@ -3,7 +3,7 @@
 namespace App\Observers;
 
 use App\Wallet;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Redis;
 
 class WalletObserver
 {
@@ -15,18 +15,7 @@ class WalletObserver
      */
     public function created(Wallet $wallet)
     {
-        Cache::forever(Wallet::getWalletKey($wallet->address), 1);
-    }
-
-    /**
-     * Handle the wallet "updated" event.
-     *
-     * @param  Wallet  $wallet
-     * @return void
-     */
-    public function updated(Wallet $wallet)
-    {
-        //
+        Redis::connection()->set(strtolower(Wallet::getWalletKey($wallet->address)), 1);
     }
 
     /**
@@ -37,28 +26,6 @@ class WalletObserver
      */
     public function deleted(Wallet $wallet)
     {
-        Cache::forget(Wallet::getWalletKey($wallet->address));
-    }
-
-    /**
-     * Handle the wallet "restored" event.
-     *
-     * @param  \App\Wallet  $wallet
-     * @return void
-     */
-    public function restored(Wallet $wallet)
-    {
-        //
-    }
-
-    /**
-     * Handle the wallet "force deleted" event.
-     *
-     * @param  Wallet  $wallet
-     * @return void
-     */
-    public function forceDeleted(Wallet $wallet)
-    {
-        //
+        Redis::connection()->del([strtolower(Wallet::getWalletKey($wallet->address))]);
     }
 }

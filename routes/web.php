@@ -10,13 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function(){
+    return redirect(route('wallet.index'));
+});
+
 Route::group(['prefix' => 'wallets'], function(){
     Route::get('/', 'WalletController@index')->name('wallet.index');
     Route::get('/create', 'WalletController@create')->name('wallet.create');
     Route::post('/create', 'WalletController@store');
-    Route::get('/getBalance', 'WalletController@getBalance');
+    Route::get('{wallet}/transactions', 'WalletController@transactions')->name('wallet.transactions');
+    Route::get('{wallet}', 'WalletController@get')->name('wallet.get');
 });
 
-Route::group(['prefix' => 'transactions'], function(){
-    Route::get('/get', 'TransactionController@findTransaction');
-});
+Route::get('/api/wallets', 'WalletController@apiIndex')->name('api.wallet.index');

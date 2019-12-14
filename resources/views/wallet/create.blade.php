@@ -38,3 +38,22 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@1.2.4/dist/web3.min.js"></script>
+    <script>
+    const web3 = new Web3('wss://kovan.infura.io/ws/v3/e2a05c9a3fed4565bc05f93839d526e7/');
+    const subscription = web3.eth.subscribe('logs', {
+        address: '0x75e1864609B8386b2739687108d40070f546D721'
+    }, function(error, result) {
+        if (!error)
+            console.log(result);
+    })
+        .on("data", function(log) {
+            console.log(log);
+        })
+        .on("changed", function(log) {});
+
+
+    </script>
+@endpush
