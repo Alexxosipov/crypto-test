@@ -25,6 +25,6 @@ class Transaction extends Model
 
     public function getType()
     {
-        return $this->operation_type;
+        return $this->type;
     }
 }

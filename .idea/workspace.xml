@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6462fc3f-7bb5-4716-8737-532bc3fe42d3" name="Default Changelist" comment="add socket url to env">
-      <change afterPath="$PROJECT_DIR$/app/Websocket/AsyncTasks/Laravelable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Websocket/AsyncTasks/ProcessNewHeadEthereumTask.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/wallet/wallet.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f96e826-70a3-48a7-a612-a73cd35504be.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f96e826-70a3-48a7-a612-a73cd35504be.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/alexxosipov.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/alexxosipov.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ListenWebsocketCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ListenWebsocketCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/WebSocketServer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Tasks/ProcessTransactionTask.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/Transaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WalletController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WalletController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/TransactionObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/TransactionObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/WalletObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/WalletObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Eth/EthService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Eth/EthService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Eth/InfuraEthService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Eth/InfuraEthService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Wallet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Wallet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_11_045804_create_transactions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_11_045804_create_transactions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/wallet/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallet/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/wallet/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallet/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="6462fc3f-7bb5-4716-8737-532bc3fe42d3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +15,7 @@
     </execution>
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="62955" />
+    <option name="totalTimeSeconds" value="63193" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -278,7 +246,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575925064504</updated>
-      <workItem from="1575925065964" duration="67741000" />
+      <workItem from="1575925065964" duration="68129000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1575937579982</created>
@@ -322,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576124957101</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="IT WORKS! (but via ajax :( )">
+      <created>1576293868814</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1576293868814</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +321,7 @@
     <MESSAGE value="Add a lot of stuff" />
     <MESSAGE value="update composer json" />
     <MESSAGE value="add socket url to env" />
-    <option name="LAST_COMMIT_MESSAGE" value="add socket url to env" />
+    <MESSAGE value="IT WORKS! (but via ajax :( )" />
+    <option name="LAST_COMMIT_MESSAGE" value="IT WORKS! (but via ajax :( )" />
   </component>
 </project>
