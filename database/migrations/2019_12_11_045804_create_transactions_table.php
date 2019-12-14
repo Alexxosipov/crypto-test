@@ -19,6 +19,8 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('wallet_id');
             $table->enum('type', ['in', 'out']);
             $table->string('to')->index();
+            $table->string('block');
+            $table->integer('confirmations');
             $table->decimal('value', 65,30);
             $table->timestamps();
         });

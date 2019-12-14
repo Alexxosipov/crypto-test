@@ -57,7 +57,8 @@ class ListenWebsocketCommand extends Command
                     $transaction = json_decode($msg, true);
                     if (isset($transaction['params'])) {
                         $blockHash = $transaction['params']['result']['hash'];
-                        $this->pool->add(new ProcessNewHeadEthereumTask($blockHash, $this->ethService));
+                        $blockNumber = $transaction['params']['result']['number'];
+                        $this->pool->add(new ProcessNewHeadEthereumTask($blockHash, $blockNumber, $this->ethService));
                     }
                 });
 

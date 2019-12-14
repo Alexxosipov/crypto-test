@@ -23,7 +23,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="mb-3">
                     <a href="{{route('wallet.index')}}" class="btn btn-primary btn-small">Back</a>
                 </div>
@@ -41,6 +41,7 @@
                             <tr>
                                 <td class="cell">Hash</td>
                                 <td class="cell transaction__type">Type</td>
+                                <td class="cell transaction__type" title="Confirmations">Confirmations</td>
                                 <td class="cell">Address</td>
                                 <td class="value">Value</td>
                             </tr>
@@ -50,6 +51,7 @@
                                     <tr data-id="{{$transaction->id}}">
                                         <td class="cell transaction__hash" title="{{$transaction->hash}}">{{$transaction->hash}}</td>
                                         <td class="cell transaction__type">{{$transaction->getType()}}</td>
+                                        <td class="cell transaction__type">{{$transaction->confirmations}}</td>
                                         <td class="cell transaction__address" title="{{$transaction->to}}">{{$transaction->to}}</td>
                                         <td class="transaction__value">{{$transaction->value}}</td>
                                     </tr>
@@ -85,7 +87,8 @@
                            transactionsTable.prepend(`
                             <tr data-id="${item.id}">
 <td class="cell transaction__hash">${item.hash}</td>
-<td class="cell transaction__type">${item.operation_type}</td>
+<td class="cell transaction__type">${item.type}</td>
+<td class="cell transaction__type">${item.confirmations}</td>
 <td class="cell transaction__address">${item.to}</td>
 <td class="transaction__value">${item.value}</td>
 </tr>

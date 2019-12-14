@@ -11,21 +11,32 @@ use Illuminate\Support\Facades\Redis;
 
 class Transaction
 {
+    private $blockNumber;
+
     private $to = null;
+
     private $recipientModel = null;
+
     private $from = null;
+
     private $senderModel = null;
+
     private $transactionExists = false;
+
     private $amount = null;
+
     private $hash;
+
     private $redis;
 
-    public function __construct(array $transaction)
+
+    public function __construct(array $transaction, string $blockNumber)
     {
         $this->redis = Redis::connection();
         $this->to = $transaction['to'] ?? null;
         $this->from = $transaction['from'] ?? null;
         $this->hash = $transaction['hash'];
+        $this->blockNumber = $blockNumber;
         $this->amount = isset($transaction['value']) ? EthHelper::getWeiFromHexDec($transaction['value']) : null;
         $this->initModels();
     }
@@ -60,6 +71,11 @@ class Transaction
         return $this->hash;
     }
 
+    public function getBlockNumber() :string
+    {
+        return $this->blockNumber;
+    }
+
 
     private function initModels() :void
     {
@@ -81,24 +97,32 @@ class Transaction
 
     public function writeTransactionToDatabase()
     {
-        if ($sender = $this->getSenderModel()) {
-            TransactionModel::create([
-                'hash' => $this->getHash(),
-                'wallet_id' => $sender->id,
-                'type' => TransactionModel::OPERATION_TYPE_OUT,
-                'value' => $this->getAmount(),
-                'to' => $this->getRecipient()
-            ]);
-        }
+        try {
+            if ($sender = $this->getSenderModel()) {
+                TransactionModel::create([
+                    'hash' => $this->getHash(),
+                    'wallet_id' => $sender->id,
+                    'type' => TransactionModel::OPERATION_TYPE_OUT,
+                    'value' => $this->getAmount(),
+                    'to' => $this->getRecipient(),
+                    'block' => $this->getBlockNumber(),
+                    'confirmations' => 1,
+                ]);
+            }
 
-        if ($recipient = $this->getRecipientModel()) {
-            TransactionModel::create([
-                'hash' => $this->getHash(),
-                'wallet_id' => $recipient->id,
-                'type' => TransactionModel::OPERATION_TYPE_IN,
-                'value' => $this->getAmount(),
-                'to' => $this->getSender()
-            ]);
+            if ($recipient = $this->getRecipientModel()) {
+                TransactionModel::create([
+                    'hash' => $this->getHash(),
+                    'wallet_id' => $recipient->id,
+                    'type' => TransactionModel::OPERATION_TYPE_IN,
+                    'value' => $this->getAmount(),
+                    'to' => $this->getSender(),
+                    'block' => $this->getBlockNumber(),
+                    'confirmations' => 1,
+                ]);
+            }
+        } catch (\Exception $e) {
+            Log::error('SQL ERROR', [$e->getMessage(), $e->getTrace()]);
         }
     }
 }

@@ -11,7 +11,7 @@ class Transaction extends Model
     const OPERATION_TYPE_IN = 'in';
     const OPERATION_TYPE_OUT = 'out';
 
-    protected $fillable = ["wallet_id", "value", "type", "to", "hash"];
+    protected $fillable = ["wallet_id", "value", "type", "to", "hash", "block", "confirmations"];
 
     public function wallet()
     {

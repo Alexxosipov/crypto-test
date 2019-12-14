@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6462fc3f-7bb5-4716-8737-532bc3fe42d3" name="Default Changelist" comment="" />
+    <list default="true" id="6462fc3f-7bb5-4716-8737-532bc3fe42d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ListenWebsocketCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ListenWebsocketCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/Transaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Websocket/AsyncTasks/ProcessNewHeadEthereumTask.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Websocket/AsyncTasks/ProcessNewHeadEthereumTask.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_11_045804_create_transactions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_11_045804_create_transactions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/wallet/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallet/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/wallet/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallet/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/wallet/wallet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallet/wallet.blade.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +25,7 @@
     </execution>
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="63193" />
+    <option name="totalTimeSeconds" value="65144" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -228,7 +238,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3f845314" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@c1f5504" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@60652dff" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -246,7 +256,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575925064504</updated>
-      <workItem from="1575925065964" duration="68129000" />
+      <workItem from="1575925065964" duration="70079000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1575937579982</created>
@@ -297,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576293868814</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fix type">
+      <created>1576294750782</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576294750782</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +339,7 @@
     <MESSAGE value="update composer json" />
     <MESSAGE value="add socket url to env" />
     <MESSAGE value="IT WORKS! (but via ajax :( )" />
-    <option name="LAST_COMMIT_MESSAGE" value="IT WORKS! (but via ajax :( )" />
+    <MESSAGE value="Fix type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix type" />
   </component>
 </project>
