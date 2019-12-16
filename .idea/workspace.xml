@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6462fc3f-7bb5-4716-8737-532bc3fe42d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/ListenWebsocketCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/ListenWebsocketCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/Transaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Websocket/AsyncTasks/ProcessNewHeadEthereumTask.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Websocket/AsyncTasks/ProcessNewHeadEthereumTask.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_11_045804_create_transactions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_11_045804_create_transactions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/wallet/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallet/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WalletController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WalletController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/wallet/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallet/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/wallet/wallet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallet/wallet.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +25,7 @@
     </execution>
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="65144" />
+    <option name="totalTimeSeconds" value="67505" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -240,6 +240,11 @@
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3f845314" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceNode@60652dff" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3f845314" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4ebf8f44" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
           </expand>
           <select />
         </treeState>
@@ -256,7 +261,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575925064504</updated>
-      <workItem from="1575925065964" duration="70079000" />
+      <workItem from="1575925065964" duration="72434000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1575937579982</created>
@@ -314,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576294750782</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add confirmations to the transactions table">
+      <created>1576296667897</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1576296667897</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +352,7 @@
     <MESSAGE value="add socket url to env" />
     <MESSAGE value="IT WORKS! (but via ajax :( )" />
     <MESSAGE value="Fix type" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix type" />
+    <MESSAGE value="Add confirmations to the transactions table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add confirmations to the transactions table" />
   </component>
 </project>

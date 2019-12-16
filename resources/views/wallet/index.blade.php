@@ -26,13 +26,19 @@
                             <tr>
                                 <th>Wallet address</th>
                                 <th>Balance, ETH</th>
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody id="wallets-table">
                                 @foreach($wallets as $wallet)
                                     <tr data-id="{{$wallet->id}}">
-                                        <td><a href="{{route('wallet.get', ['wallet' => $wallet])}}">{{$wallet->address}}</a></td>
+                                        <td>
+                                            <a href="{{route('wallet.get', ['wallet' => $wallet])}}">{{$wallet->address}}</a>
+                                        </td>
                                         <td class="balance">{{$wallet->balance}}</td>
+                                        <td class="remove">
+                                            <a class="deleteWallet" href="{{route('wallet.delete', ['wallet' => $wallet])}}">delete</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -52,6 +58,22 @@
 
 @push('scripts')
     <script>
+
+        $('.deleteWallet').click(function(e){
+            e.preventDefault();
+            if (confirm('Do you want to delete this wallet?')) {
+                $.ajax({
+                    url: $(this).attr('href'),
+                    method: 'post',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+                    },
+                    success: (data) =>{
+                        $(this).parent().parent().remove();
+                    }
+                });
+            }
+        });
         setInterval(function(){
             $.ajax({
                 method: 'GET',

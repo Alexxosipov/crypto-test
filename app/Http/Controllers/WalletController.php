@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Redis;
 class WalletController extends Controller
 {
     // it should be refactored with translation dictionaries
-    const SUCCESS_WALLET_SAVE_MESSAGE = 'Wallet successfully saved.';
+    const SUCCESS_WALLET_SAVE_MESSAGE = 'Wallet has been saved.';
+    const SUCCESS_WALLET_DELETE_MESSAGE = 'Wallet has been deleted.';
 
     public function index(Request $request)
     {
@@ -51,5 +52,12 @@ class WalletController extends Controller
     public function transactions(Wallet $wallet)
     {
         return response()->json(['transactions' => $wallet->transactions, 'balance' => $wallet->balance]);
+    }
+
+    public function delete(Wallet $wallet)
+    {
+        $wallet->delete();
+        return redirect(route('wallet.index'))->with('success', self::SUCCESS_WALLET_DELETE_MESSAGE);
+
     }
 }
