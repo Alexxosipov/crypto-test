@@ -35,10 +35,12 @@ class ProcessNewHeadEthereumTask extends Task
     private function getBlockData()
     {
         $block = $this->ethService->getBlock($this->blockHash);
-        foreach ($block['transactions'] as $transactionArray) {
-            $transaction = new Transaction($transactionArray, $this->blockNumber);
-            if ($transaction->addressExistsInDatabase()) {
-                $transaction->writeTransactionToDatabase();
+        if (count($block['transactions'])) {
+            foreach ($block['transactions'] as $transactionArray) {
+                $transaction = new Transaction($transactionArray, $this->blockNumber);
+                if ($transaction->addressExistsInDatabase()) {
+                    $transaction->writeTransactionToDatabase();
+                }
             }
         }
 
